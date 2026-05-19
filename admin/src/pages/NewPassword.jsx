@@ -41,8 +41,6 @@ function NewPassword() {
 
         try {
 
-            const res = await axios.post("http://localhost:5000/reset-password", {
-
             const res = await axios.post("https://jwello-jwellery.onrender.com/reset-password", {
 
                 email,
