@@ -1,6 +1,6 @@
-// ==============================
+// ==
 //  Jwello — Main JavaScript
-// ==============================
+// ==
 
 // ── PRELOADER
 window.addEventListener('load', () => {

@@ -13,11 +13,7 @@ function AdminLogin() {
 
     const handleLogin = async () => {
         try {
- 
-            const res = await axios.post('http://localhost:8000/admin-login', {
-=======
-            const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/admin-login`, {
- ace054612ae0953b681d9d6805f751f75cc91382
+const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/admin-login`, {
                 email,
                 password
             });

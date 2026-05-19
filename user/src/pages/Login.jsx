@@ -1,23 +1,15 @@
 import React, { useState } from "react";
- 
-import { Link, useNavigate } from "react-router-dom";
-=======
 import { Link, useNavigate, useLocation } from "react-router-dom";
- ace054612ae0953b681d9d6805f751f75cc91382
 import axios from "axios";
 
 function Login() {
     const navigate = useNavigate();
- 
 
-    const [activeTab, setActiveTab] = useState("login");
-
-=======
     const location = useLocation();
     const [activeTab, setActiveTab] = useState(
         location.state?.tab || "login"
     );
- ace054612ae0953b681d9d6805f751f75cc91382
+
     const [btnText, setBtnText] = useState("Sign In");
     const [btnColor, setBtnColor] = useState("");
 
@@ -52,11 +44,10 @@ function Login() {
 
     const handleRegister = async () => {
         try {
- 
-            const res = await axios.post("http://localhost:8000/register", registerData);
-=======
+
+
             const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/register`, registerData);
- ace054612ae0953b681d9d6805f751f75cc91382
+
 
             setMessage(res.data.message);
             setMessageColor(res.data.success ? "green" : "red");
@@ -116,11 +107,9 @@ function Login() {
 
             const res = await axios.post(
 
- 
-                "http://localhost:8000/login",
-=======
+
                 `${import.meta.env.VITE_BACKEND_URL}/login`,
- ace054612ae0953b681d9d6805f751f75cc91382
+
                 loginData
             ); console.log(res.data);
 
@@ -210,12 +199,10 @@ function Login() {
                     <div className="auth-box">
 
                         <div className="auth-tabs">
- 
-                            <button
-                                className={`auth-tab ${activeTab === "login" ? "active" : ""}`}
-=======
+
+                        
                             <button className={`auth-tab ${activeTab === "login" ? "active" : ""}`}
- ace054612ae0953b681d9d6805f751f75cc91382
+
                                 onClick={() => setActiveTab("login")}
                             >
                                 Sign In
@@ -263,11 +250,11 @@ function Login() {
                             </button>
                         </div>
 
- 
-                        <div className={`form-panel ${activeTab === "register" ? "active" : ""}`}>
-=======
-                        <div className={`form-panel ${activeTab === "register" ? "active" : ""} `}>
- ace054612ae0953b681d9d6805f751f75cc91382
+
+         
+
+                 <div className={`form-panel ${activeTab === "register" ? "active" : ""}`}>
+
                             <h2 className="auth-heading">Join <em>JWELLO</em></h2>
 
                             <div className="auth-form-group">
@@ -327,11 +314,11 @@ function Login() {
                                     style={{
                                         color: messageColor,
                                         background: messageColor === "green" ? "#ecfdf5" : "#fef2f2",
- 
+
                                         border: `1px solid ${messageColor === "green" ? "#10B981" : "#EF4444"}`,
-=======
-                                        border: `1px solid ${messageColor === "green" ? "#10B981" : "#EF4444"} `,
- ace054612ae0953b681d9d6805f751f75cc91382
+
+                                  
+
                                         padding: "10px",
                                         borderRadius: "8px",
                                         fontSize: "13px",
@@ -356,6 +343,7 @@ function Login() {
 
             </div>
         </div>
+
     );
 }
 

@@ -78,11 +78,10 @@ function Dashboard() {
     useEffect(() => {
 
         axios
- 
-            .get("http://localhost:8000/dashboard-stats")
-=======
+
+
             .get(`${import.meta.env.VITE_BACKEND_URL}/dashboard-stats`)
- ace054612ae0953b681d9d6805f751f75cc91382
+
             .then((res) => {
 
                 setStats(res.data);
@@ -91,11 +90,9 @@ function Dashboard() {
             .catch((err) => console.log(err));
 
         axios
- 
-            .get("http://localhost:8000/top-products")
-=======
+
             .get(`${import.meta.env.VITE_BACKEND_URL}/top-products`)
- ace054612ae0953b681d9d6805f751f75cc91382
+
             .then((res) => {
 
                 setTopProducts(res.data);

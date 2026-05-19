@@ -102,11 +102,10 @@ function Shop() {
         setWishlistIds(wishlist.map(item => item._id));
     };
     useEffect(() => {
- 
-        fetch("http://localhost:8000/products")
-=======
+
+
         fetch(`${import.meta.env.VITE_BACKEND_URL}/products`)
- ace054612ae0953b681d9d6805f751f75cc91382
+
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
@@ -194,11 +193,11 @@ function Shop() {
                                     <Link to={`/products/${item._id}`} className="product-link" key={item._id}>
                                         <div className="product-card reveal visible">
                                             <div className="product-img">
- 
+
                                                 <img src={`http://localhost:8000${item.images?.[0]}`} alt={item.name} />
-=======
+
                                                 <img src={`${import.meta.env.VITE_BACKEND_URL}${item.images?.[0]}`} alt={item.name} />
- ace054612ae0953b681d9d6805f751f75cc91382
+
 
                                                 <div className="product-actions">
                                                     <button className={`action-btn wishlist-btn 
@@ -213,11 +212,11 @@ function Shop() {
 
                                                     <button className="quick-view-btn" onClick={(e) => {
                                                         e.preventDefault();
- 
+
                                                         setPreviewImage(`http://localhost:8000${item.images?.[0]}`);
-=======
+
                                                         setPreviewImage(`${import.meta.env.VITE_BACKEND_URL}${item.images?.[0]}`);
- ace054612ae0953b681d9d6805f751f75cc91382
+
                                                     }}>
                                                         👁
                                                     </button>

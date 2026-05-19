@@ -1,7 +1,7 @@
-    /* ===========================
+    /* ======
       Jwello — Jewellery CSS
       Responsive + Animated
-    =========================== */
+    ====== */
 
     :root {
       --gold: #C9A84C;
@@ -1400,7 +1400,7 @@
       background: #f5f5f5;
     }
 
-    /* ================= CART PAGE ================= */
+    /* === CART PAGE === */
 
     .cart-page {
       padding-top: 62px;
@@ -2481,9 +2481,9 @@
       font-weight: 500;
     }
 
-    /* =========================
+    /* ====
       DELIVERY TRACKER FINAL FIX
-    ========================= */
+    ==== */
     .delivery-tracker {
       display: flex;
       align-items: center;
@@ -2725,9 +2725,9 @@
       color: #777;
     }
 
-    /* =========================
+    /* ====
       PRODUCT DETAILS PAGE
-    ========================= */
+    ==== */
     .product-details {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -2870,9 +2870,9 @@
       line-height: 1.6;
     }
 
-    /* =========================
+    /* ====
       RESPONSIVE
-    ========================= */
+    ==== */
 
     @media (max-width: 1100px) {
 
@@ -2997,9 +2997,9 @@
       cursor: not-allowed;
     }
 
-    /* =========================
+    /* ====
       REVIEWS SECTION
-    ========================= */
+    ==== */
 
     .reviews-section {
       width: 100%;
@@ -3018,9 +3018,9 @@
       font-weight: 600;
     }
 
-    /* =========================
+    /* ====
       WRITE REVIEW BOX
-    ========================= */
+    ==== */
 
     .write-review-box {
       width: 100%;
@@ -3087,9 +3087,9 @@
       transform: translateY(-2px);
     }
 
-    /* =========================
+    /* ====
       REVIEWS LIST
-    ========================= */
+    ==== */
 
     .reviews-list {
       width: 100%;
@@ -3098,9 +3098,9 @@
       gap: 22px;
     }
 
-    /* =========================
+    /* ====
       REVIEW CARD
-    ========================= */
+    ==== */
 
     .review-card {
       width: 100%;
@@ -3753,7 +3753,7 @@
 
     @media (max-width: 768px) {
 
-      /* ================= NAVBAR ================= */
+      /* === NAVBAR === */
 
       .navbar {
         padding: 14px 18px;
@@ -3863,7 +3863,7 @@
         display: none;
       }
 
-      /* ================= HERO ================= */
+      /* === HERO === */
 
       .hero {
         min-height: 100svh;
@@ -3886,7 +3886,7 @@
         text-align: center;
       }
 
-      /* ================= SHOP ================= */
+      /* === SHOP === */
 
       .shop-container,
       .shop-page,
@@ -3979,7 +3979,7 @@
 
     @media (max-width: 480px) {
 
-      /* ================= NAVBAR ================= */
+      /* === NAVBAR === */
 
       .navbar {
         padding: 14px 18px;
@@ -3994,7 +3994,7 @@
         height: 44px;
       }
 
-      /* ================= SHOP LAYOUT ================= */
+      /* === SHOP LAYOUT === */
 
       .shop-container,
       .shop-page,
@@ -4016,7 +4016,7 @@
         width: 100%;
       }
 
-      /* ================= PRODUCT GRID ================= */
+      /* === PRODUCT GRID === */
 
       .product-grid {
         display: grid;
@@ -4075,7 +4075,7 @@
         border-radius: 10px;
       }
 
-      /* ================= SHOP HERO ================= */
+      /* === SHOP HERO === */
 
       .shop-banner,
       .shop-hero {
@@ -4091,7 +4091,7 @@
     }
 
 
-    /* ================= REMOVE STICKY MOBILE HOVER ================= */
+    /* === REMOVE STICKY MOBILE HOVER === */
 
     @media (hover: none) {
 
@@ -4115,8 +4115,8 @@
     video,
     iframe {
       max-width: 100%;
- 
-=======
+
+
     }
 
     .delivery-tracker {
@@ -4159,5 +4159,5 @@
     .step p {
       font-size: 14px;
       margin: 0;
- ace054612ae0953b681d9d6805f751f75cc91382
+
     }

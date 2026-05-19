@@ -11,11 +11,9 @@ function Categories() {
     const [selectedCategory, setSelectedCategory] = useState(null)
     const [categoryProducts, setCategoryProducts] = useState([])
     useEffect(() => {
- 
-        fetch("http://localhost:8000/categories-count")
-=======
-        fetch(`${import.meta.env.VITE_BACKEND_URL}/categories-count`)
- ace054612ae0953b681d9d6805f751f75cc91382
+
+     fetch(`${import.meta.env.VITE_BACKEND_URL}/categories-count`)  
+
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
@@ -38,11 +36,8 @@ function Categories() {
         if (!newCategory.trim()) return
 
         if (editIndex !== null) {
- 
-            await fetch(`http://localhost:8000/edit-category/${categories[editIndex]._id}`, {
-=======
-            await fetch(`${import.meta.env.VITE_BACKEND_URL}/edit-category/${categories[editIndex]._id}`, {
- ace054612ae0953b681d9d6805f751f75cc91382
+
+await fetch(`${import.meta.env.VITE_BACKEND_URL}/edit-category/${categories[editIndex]._id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
@@ -53,11 +48,7 @@ function Categories() {
                 })
             })
         } else {
- 
-            await fetch("http://localhost:8000/add-category", {
-=======
-            await fetch(`${import.meta.env.VITE_BACKEND_URL}/add-category`, {
- ace054612ae0953b681d9d6805f751f75cc91382
+await fetch(`${import.meta.env.VITE_BACKEND_URL}/add-category`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -102,11 +93,8 @@ function Categories() {
                         {categories.map((item, index) => (
                             <div key={index} className="cat-admin-card" onClick={async () => {
                                 setSelectedCategory(item.name)
- 
-                                const res = await fetch("http://localhost:8000/products")
-=======
-                                const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/products`)
- ace054612ae0953b681d9d6805f751f75cc91382
+
+                      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/products`)
                                 const data = await res.json()
                                 const filtered = data.filter(
                                     p => p.category?.toLowerCase() === item.name.toLowerCase())
@@ -152,13 +140,9 @@ function Categories() {
                                     <button
                                         className="delete-btn"
                                         onClick={async () => {
- 
-                                            await fetch(`http://localhost:8000/delete-category/${item._id}`, {
-=======
-                                            await fetch(`${import.meta.env.VITE_BACKEND_URL}/delete-category/${item._id}`, {
- ace054612ae0953b681d9d6805f751f75cc91382
-                                                method: "DELETE"
-                                            })
+await fetch(`${import.meta.env.VITE_BACKEND_URL}/delete-category/${item._id}`, {
+    method: "DELETE"
+});
                                             window.location.reload()
                                         }}
                                     >
@@ -277,11 +261,8 @@ function Categories() {
                                             marginBottom: "20px"
                                         }}>
 
- 
-                                            <img src={`http://localhost:8000${p.images?.[0]}`} alt={p.name} style={{
-=======
-                                            <img src={`${import.meta.env.VITE_BACKEND_URL}${p.images?.[0]}`} alt={p.name} style={{
- ace054612ae0953b681d9d6805f751f75cc91382
+
+                                          <img src={`${import.meta.env.VITE_BACKEND_URL}${p.images?.[0]}`} alt={p.name} style={{
                                                 width: "70px",
                                                 height: "70px",
                                                 objectFit: "cover",

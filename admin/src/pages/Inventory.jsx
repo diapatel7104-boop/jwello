@@ -60,11 +60,11 @@ function Inventory() {
         try {
 
             await fetch(
- 
+
                 `http://localhost:8000/products/${item._id}`,
-=======
+
                 `${import.meta.env.VITE_BACKEND_URL}/products/${item._id}`,
- ace054612ae0953b681d9d6805f751f75cc91382
+
                 {
                     method: "PUT",
                     headers: {
@@ -107,11 +107,11 @@ function Inventory() {
         try {
 
             await fetch(
- 
+
                 `http://localhost:8000/products/${item._id}`,
-=======
+
                 `${import.meta.env.VITE_BACKEND_URL}/products/${item._id}`,
- ace054612ae0953b681d9d6805f751f75cc91382
+
                 {
                     method: "DELETE"
                 }
@@ -132,11 +132,10 @@ function Inventory() {
     };
     useEffect(() => {
 
- 
-        fetch("http://localhost:8000/products")
-=======
+
+
         fetch(`${import.meta.env.VITE_BACKEND_URL}/products`)
- ace054612ae0953b681d9d6805f751f75cc91382
+
             .then(res => res.json())
             .then(data => {
                 setInventory(data)
@@ -182,11 +181,11 @@ function Inventory() {
                                 <div className="inventory-top">
                                     <div className="ca-icon">
 
- 
+
                                         <img src={`http://localhost:8000${item.images?.[0]}`} alt={item.name} className="inventory-img" />
-=======
+
                                         <img src={`${import.meta.env.VITE_BACKEND_URL}${item.images?.[0]}`} alt={item.name} className="inventory-img" />
- ace054612ae0953b681d9d6805f751f75cc91382
+
 
                                     </div>
 
