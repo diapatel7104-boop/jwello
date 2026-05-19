@@ -102,11 +102,11 @@ function Profile() {
 
     };
     useEffect(() => {
-<<<<<<< HEAD
+ 
         const socket = io("http://localhost:8000");
 =======
         const socket = io(`${import.meta.env.VITE_BACKEND_URL}`);
->>>>>>> ace054612ae0953b681d9d6805f751f75cc91382
+ ace054612ae0953b681d9d6805f751f75cc91382
 
         socket.on("delivery-updated", (data) => {
             setOrders(prev =>
@@ -132,11 +132,11 @@ function Profile() {
             try {
 
                 const res = await fetch(
-<<<<<<< HEAD
+ 
                     `http://localhost:8000/user-reviews/${user.email}`
 =======
                     `${import.meta.env.VITE_BACKEND_URL}/user-reviews/${user.email}`
->>>>>>> ace054612ae0953b681d9d6805f751f75cc91382
+ ace054612ae0953b681d9d6805f751f75cc91382
                 );
 
                 const data = await res.json();
@@ -169,11 +169,11 @@ function Profile() {
         try {
             const user = JSON.parse(localStorage.getItem("jwello_user"));
 
-<<<<<<< HEAD
+ 
             const res = await fetch(`http://localhost:8000/get-user/${user.email}`);
 =======
             const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/get-user/${user.email}`);
->>>>>>> ace054612ae0953b681d9d6805f751f75cc91382
+ ace054612ae0953b681d9d6805f751f75cc91382
             const data = await res.json();
 
             setCurrentUser(data); // ✅ THIS FIXES EVERYTHING
@@ -197,13 +197,13 @@ function Profile() {
             const user = JSON.parse(localStorage.getItem("jwello_user"));
 
             const url = editId
-<<<<<<< HEAD
+ 
                 ? "http://localhost:8000/update-address"
                 : "http://localhost:8000/save-address";
 =======
                 ? `${import.meta.env.VITE_BACKEND_URL}/update-address`
                 : `${import.meta.env.VITE_BACKEND_URL}/save-address`;
->>>>>>> ace054612ae0953b681d9d6805f751f75cc91382
+ ace054612ae0953b681d9d6805f751f75cc91382
 
             const res = await fetch(url, {
                 method: "POST",
@@ -249,11 +249,11 @@ function Profile() {
     };
     const fetchBookings = async () => {
         try {
-<<<<<<< HEAD
+ 
             const res = await axios.get(`http://localhost:8000/orders/${user.email}`);
 =======
             const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/orders/${user.email}`);
->>>>>>> ace054612ae0953b681d9d6805f751f75cc91382
+ ace054612ae0953b681d9d6805f751f75cc91382
             console.log(res.data);
             const myOrders = res.data.orders.filter(
                 (item) =>
@@ -275,11 +275,11 @@ function Profile() {
         if (!confirmDelete) return;
 
         try {
-<<<<<<< HEAD
+ 
             const res = await fetch("http://localhost:8000/delete-address", {
 =======
             const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/delete-address`, {
->>>>>>> ace054612ae0953b681d9d6805f751f75cc91382
+ ace054612ae0953b681d9d6805f751f75cc91382
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -318,11 +318,11 @@ function Profile() {
             }
 
             const res = await axios.post(
-<<<<<<< HEAD
+ 
                 `http://localhost:8000/payment/retry/${order._id}`,
 =======
                 `${import.meta.env.VITE_BACKEND_URL}/payment/retry/${order._id}`,
->>>>>>> ace054612ae0953b681d9d6805f751f75cc91382
+ ace054612ae0953b681d9d6805f751f75cc91382
                 { email: user.email }
             );
 
@@ -345,11 +345,11 @@ function Profile() {
                 handler: async function (response) {
                     console.log("✅ SUCCESS");
 
-<<<<<<< HEAD
+ 
                     await axios.post("http://localhost:8000/update-order", {
 =======
                     await axios.post(`${import.meta.env.VITE_BACKEND_URL}/update-order`, {
->>>>>>> ace054612ae0953b681d9d6805f751f75cc91382
+ ace054612ae0953b681d9d6805f751f75cc91382
                         id: order._id,
                         status: "Paid",
                         paymentId: response.razorpay_payment_id,
@@ -363,11 +363,11 @@ function Profile() {
                     ondismiss: async function () {
                         console.log("🔥 DISMISSED");
 
-<<<<<<< HEAD
+ 
                         await axios.post("http://localhost:8000/update-order", {
 =======
                         await axios.post(`${import.meta.env.VITE_BACKEND_URL}/update-order`, {
->>>>>>> ace054612ae0953b681d9d6805f751f75cc91382
+ ace054612ae0953b681d9d6805f751f75cc91382
                             id: order._id,
                             status: "Failed"
                         });
@@ -395,13 +395,13 @@ function Profile() {
         const existing = reviewedOrders[reviewOrder._id];
 
         const url = existing
-<<<<<<< HEAD
+ 
             ? `http://localhost:8000/user-reviews/${existing._id}`
             : "http://localhost:8000/user-reviews";
 =======
             ? `${import.meta.env.VITE_BACKEND_URL}/user-reviews/${existing._id}`
             : `${import.meta.env.VITE_BACKEND_URL}/user-reviews`;
->>>>>>> ace054612ae0953b681d9d6805f751f75cc91382
+ ace054612ae0953b681d9d6805f751f75cc91382
 
         const method = existing ? "PUT" : "POST";
 
