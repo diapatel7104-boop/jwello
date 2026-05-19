@@ -132,7 +132,6 @@ function Profile() {
 
                 const res = await fetch(
 
-                    `http://localhost:8000/user-reviews/${user.email}`
 
                     `${import.meta.env.VITE_BACKEND_URL}/user-reviews/${user.email}`
 
@@ -169,7 +168,7 @@ function Profile() {
             const user = JSON.parse(localStorage.getItem("jwello_user"));
 
 
-            const res = await fetch(`http://localhost:8000/get-user/${user.email}`);
+          
 
             const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/get-user/${user.email}`);
 
@@ -246,7 +245,6 @@ function Profile() {
     const fetchBookings = async () => {
         try {
 
-            const res = await axios.get(`http://localhost:8000/orders/${user.email}`);
 
             const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/orders/${user.email}`);
 
@@ -313,8 +311,6 @@ function Profile() {
             }
 
             const res = await axios.post(
-
-                `http://localhost:8000/payment/retry/${order._id}`,
 
                 `${import.meta.env.VITE_BACKEND_URL}/payment/retry/${order._id}`,
 

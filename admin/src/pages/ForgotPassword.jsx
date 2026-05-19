@@ -28,7 +28,6 @@ function ForgotPassword() {
 
         try {
 
-            await axios.post("http://localhost:5000/send-otp");
 
             await axios.post("https://jwello-jwellery.onrender.com/send-otp", { email });
 
@@ -51,7 +50,7 @@ function ForgotPassword() {
     const handleVerifyOTP = async () => {
         try {
 
-            const res = await axios.post("http://localhost:5000/verify-otp", {
+
 
             const res = await axios.post("https://jwello-jwellery.onrender.com/verify-otp", {
 

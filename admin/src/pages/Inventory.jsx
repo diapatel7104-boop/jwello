@@ -61,8 +61,6 @@ function Inventory() {
 
             await fetch(
 
-                `http://localhost:8000/products/${item._id}`,
-
                 `${import.meta.env.VITE_BACKEND_URL}/products/${item._id}`,
 
                 {
@@ -108,7 +106,7 @@ function Inventory() {
 
             await fetch(
 
-                `http://localhost:8000/products/${item._id}`,
+
 
                 `${import.meta.env.VITE_BACKEND_URL}/products/${item._id}`,
 
@@ -182,7 +180,7 @@ function Inventory() {
                                     <div className="ca-icon">
 
 
-                                        <img src={`http://localhost:8000${item.images?.[0]}`} alt={item.name} className="inventory-img" />
+
 
                                         <img src={`${import.meta.env.VITE_BACKEND_URL}${item.images?.[0]}`} alt={item.name} className="inventory-img" />
 

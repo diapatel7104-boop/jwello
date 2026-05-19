@@ -96,8 +96,6 @@ function Cart() {
 
             const res = await fetch(
 
-                `http://localhost:8000/coupons/${finalCoupon}`
-
                 `${import.meta.env.VITE_BACKEND_URL}/coupons/${finalCoupon}`
 
             );
@@ -210,8 +208,7 @@ function Cart() {
                                             <div className="ci-img">
                                                 <img
 
-                                                    src={`http://localhost:8000${item.images?.[0]}`}
-
+                            
                                                     src={`${import.meta.env.VITE_BACKEND_URL}${item.images?.[0]}`}
 
                                                     alt={item.name}

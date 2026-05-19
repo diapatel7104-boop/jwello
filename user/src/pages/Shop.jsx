@@ -194,8 +194,7 @@ function Shop() {
                                         <div className="product-card reveal visible">
                                             <div className="product-img">
 
-                                                <img src={`http://localhost:8000${item.images?.[0]}`} alt={item.name} />
-
+         
                                                 <img src={`${import.meta.env.VITE_BACKEND_URL}${item.images?.[0]}`} alt={item.name} />
 
 
@@ -213,7 +212,6 @@ function Shop() {
                                                     <button className="quick-view-btn" onClick={(e) => {
                                                         e.preventDefault();
 
-                                                        setPreviewImage(`http://localhost:8000${item.images?.[0]}`);
 
                                                         setPreviewImage(`${import.meta.env.VITE_BACKEND_URL}${item.images?.[0]}`);
 
