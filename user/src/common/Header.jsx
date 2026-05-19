@@ -74,8 +74,6 @@ function Header() {
     useEffect(() => {
 
 
-        const navbar =
-            document.getElementById("navbar");
 
         const navbar = document.getElementById("navbar");
 
